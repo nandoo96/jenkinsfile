@@ -15,9 +15,10 @@ pipeline {
             }
             steps {
                 echo "Hello, the server is stopped!"
-                sh 'sudo - su
-                /opt/tomcat/bin/shutdown.sh
-                '
+                sh '''
+                    sudo - su
+                    /opt/tomcat/bin/shutdown.sh
+                '''
             }
         }
         stage ('Start') {

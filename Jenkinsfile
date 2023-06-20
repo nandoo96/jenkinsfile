@@ -26,7 +26,7 @@ pipeline {
                 echo "Hello, the server is started!"
             }
         }
-        tage ('Restart') {
+        stage ('Restart') {
             when {
                 // Only start server if a "restart" is requested
                 expression { params.REQUESTED_ACTION == 'restart' }

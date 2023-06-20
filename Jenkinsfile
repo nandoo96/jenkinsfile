@@ -14,7 +14,25 @@ pipeline {
                 expression { params.REQUESTED_ACTION == 'stop' }
             }
             steps {
-                echo "Hello, bitwiseman!"
+                echo "Hello, the server is stopped!"
+            }
+        }
+        stage ('Start') {
+            when {
+                // Only start server if a "start" is requested
+                expression { params.REQUESTED_ACTION == 'start' }
+            }
+            steps {
+                echo "Hello, the server is started!"
+            }
+        }
+        tage ('Restart') {
+            when {
+                // Only start server if a "restart" is requested
+                expression { params.REQUESTED_ACTION == 'restart' }
+            }
+            steps {
+                echo "Hello, the server is restarted!"
             }
         }
     }

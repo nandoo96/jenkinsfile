@@ -15,9 +15,9 @@ pipeline {
             }
             steps {
                 echo "Hello, the server is stopped!"
-                sh '''sudo - su
+                sh 'sudo - su
                 /opt/tomcat/bin/shutdown.sh
-                '''
+                '
             }
         }
         stage ('Start') {
@@ -27,9 +27,9 @@ pipeline {
             }
             steps {
                 echo "Hello, the server is started!"
-                sh '''sudo - su
+                sh 'sudo - su
                 /opt/tomcat/bin/startup.sh
-                '''
+                '
             }
         }
         stage ('Restart') {
@@ -39,11 +39,11 @@ pipeline {
             }
             steps {
                 echo "Hello, the server is restarted!"
-                	sh '''sudo su -
+                	sh 'sudo su -
                     /opt/tomcat/bin/shutdown.sh
                     sleep 15;
                     /opt/tomcat/bin/startup.sh
-                    '''
+                    '
             }
         }
     }
